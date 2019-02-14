@@ -1,0 +1,14 @@
+keys = ['spam', 'eggs', 'toast']
+vals = [1, 3, 5]
+
+D2 = {}
+for (k, v) in zip(keys, vals): D2[k] = v
+
+print D2
+
+
+keys = ['spam', 'eggs', 'toast']
+vals = [1, 3, 5]
+
+D3 = dict(zip(keys, vals))
+print D3
