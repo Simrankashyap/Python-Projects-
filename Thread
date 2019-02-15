@@ -1,0 +1,17 @@
+import thread                                   
+exitstat = 0 
+
+def child():
+    global exitstat
+    exitstat = exitstat + 1
+    threadid = thread.get_ident()
+    print 'Child #:', threadid, exitstat
+    thread.exit()
+    print 'never reached'
+
+def parent():
+    while 1:
+        thread.start_new_thread(child, ())
+        if raw_input() == 'q': break
+
+parent()
