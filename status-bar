@@ -1,0 +1,39 @@
+from Tkinter import *
+import Pmw
+root = Tk()
+root.title('MessageBar')
+Pmw.initialise()
+
+messagebar = box = None
+
+def selectionCommand():
+    sels = box.getcurselection()
+    if len(sels) > 0:
+        messagetype = sels[0]
+        if messagetype == 'state':
+            messagebar.message('state', 'Change of state message')
+        else:
+            text = messages[messagetype]
+            messagebar.message(messagetype, text)
+
+messages = {
+            'help'       : 'help message',
+            'userevent'  : 'user event',
+            'busy'       : 'busy ...',
+            'systemevent': 'system event',
+            'usererror'  : 'user error',
+            'systemerror': 'System error',
+            }
+
+messagebar = Pmw.MessageBar(root, entry_width=40, entry_relief=GROOVE,
+                            labelpos=W, label_text='Status:')
+messagebar.pack(side=BOTTOM, fill=X, expand=1, padx=10, pady=10)
+
+box = Pmw.ScrolledListBox(root,  listbox_selectmode=SINGLE,
+    items=('state', 'help', 'userevent', 'systemevent',
+           'usererror', 'systemerror', 'busy',),
+    label_text='Message type', labelpos=N,
+    selectioncommand=selectionCommand)
+
+
+root.mainloop()
