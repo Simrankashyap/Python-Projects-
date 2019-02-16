@@ -1,0 +1,20 @@
+from Tkinter import *
+
+class AllTkinterWidgets:
+    def __init__(self, master):
+        frame = Frame(master, width=500, height=400, bd=1)
+        frame.pack()
+
+        iframen = Frame(frame, bd=2, relief=FLAT)
+        Message(iframen, text='This is a Message widget', width=300,
+                relief=SUNKEN).pack(fill=X, padx=5)
+        iframen.pack(expand=1, fill=X, pady=10, padx=5)
+
+
+
+    
+root = Tk()
+#root.option_add('*font', ('verdana', 10, 'bold'))
+all = AllTkinterWidgets(root)
+root.title('Tkinter Widgets')
+root.mainloop()
