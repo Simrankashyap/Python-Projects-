@@ -1,0 +1,10 @@
+
+inventory = ("v", "x", "y", "z")
+
+nuts = ("gold", "gems")
+
+print nuts
+
+inventory += nuts
+
+print inventory
