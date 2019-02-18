@@ -1,12 +1,11 @@
-# Demonstrates file I/O
+
 
 import csv
-from cs50 import get_string
+import get_string
 
-# Space for students
+
 students = []
 
-# Prompt for students' names and dorms
 for i in range(3):
     name = get_string("name: ")
     dorm = get_string("dorm: ")
