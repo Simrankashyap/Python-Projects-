@@ -1,6 +1,4 @@
-# Implements a list of unique numbers
-
-from cs50 import get_int
+import get_int
 
 # Memory for numbers
 numbers = []
