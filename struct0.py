@@ -1,6 +1,6 @@
 # Demonstrates objects
 
-from cs50 import get_string
+import get_string
 
 # Space for students
 students = []
