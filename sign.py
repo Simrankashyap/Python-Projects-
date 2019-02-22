@@ -1,6 +1,5 @@
-# Conditions and relational operators
 
-from cs50 import get_int
+import get_int
 
 # Prompt user for number
 i = get_int("number: ")
