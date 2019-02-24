@@ -1,4 +1,3 @@
-# Buggy example for help50
-
+# Buggy example 
 s = get_string("Name: ")
 print(f"hello, {s}")
