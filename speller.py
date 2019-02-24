@@ -5,21 +5,19 @@ import time
 from dictionary import check, load, size, unload
 
 # Maximum length for a word
-# (e.g., pneumonoultramicroscopicsilicovolcanoconiosis)
+
 LENGTH = 45
 
 # Default dictionary
 WORDS = "dictionaries/large"
 
-# Check for correct number of args
 if len(sys.argv) != 2 and len(sys.argv) != 3:
     print("Usage: speller [dictionary] text")
     sys.exit(1)
 
-# Benchmarks
+
 time_load, time_check, time_size, time_unload = 0.0, 0.0, 0.0, 0.0
 
-# Determine dictionary to use
 dictionary = sys.argv[1] if len(sys.argv) == 3 else WORDS
 
 # Load dictionary
@@ -56,23 +54,19 @@ while True:
     if not c:
         break
 
-    # Allow alphabetical characters and apostrophes (for possessives)
+    # Allow alphabetical characters and apostrophes 
     if re.match(r"[A-Za-z]", c) or (c == "'" and index > 0):
 
         # Append character to word
         word += c
         index += 1
-
-        # Ignore alphabetical strings too long to be words
-        if index > LENGTH:
-
-            # Consume remainder of alphabetical string
+        if index > LENGTH
             while True:
                 c = file.read(1)
                 if not c or not re.match(r"[A-Za-z]", c):
                     break
 
-            # Prepare for new word
+          
             index, word = 0, ""
 
     # Ignore words with numbers (like MS Word can)
