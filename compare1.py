@@ -1,6 +1,6 @@
 # Compares two strings for equality
 
-from cs50 import get_string
+import get_string
 
 # Get two strings
 s = get_string("s: ")
