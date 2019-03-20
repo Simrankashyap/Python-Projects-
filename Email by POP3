@@ -1,3 +1,4 @@
+#POP3
 import poplib, string
 PopServerName = "mail.yourserver.com"
 PopServer = poplib.POP3(PopServerName)
